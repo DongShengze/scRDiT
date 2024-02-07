@@ -1,4 +1,4 @@
-This project is the RNA-seq Generator Diffusion of the paper 'RsGD:Generating Cancer-Cell RNA-seq by Diffusion Model and Accelerate Sampling'.
+This project is the single-cell RNA-seq Generator Diffusion of the paper 'scRGD:Generating single-cell RNA-seq by Diffusion Model and Sampling Acceleration'.
 
 How to train:
 Put your own RNA-seq data or use the exist data in the 'datasets' folder.
