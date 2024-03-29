@@ -13,9 +13,9 @@ Put your own dataset in **'datasets'** directory and copy the file path to `args
 All settings of training process are in  **'settings.py'**.
 First, set the experiment's name like:
 
-`args.run_name = 'run_name'`
+`args.run_name = 'run-name'`
 
-and the file path of the training checkpoints of this experiment would be `models/run_name_diffusion_ckpt.pt`.
+and the file path of the training checkpoints of this experiment would be `ckpts/run-name/run-name_epochX.pt`.
 
 We have 2 models, `Unet1d()` and `DiT()`, for the noise predictor of DDPMs. Set up the model like:
 
