@@ -4,11 +4,12 @@ import torch.nn as nn
 from tqdm import tqdm
 from torch import optim
 from settings import args
-from modeling import Unet1d
+from unet import Unet1d
 import logging
 from torch.utils.tensorboard import SummaryWriter
 from loader import cell_dataloader
 from diffusion import DiffusionGene
+from transformer import DiT
 
 # Run this file to train your model.
 # Change training parameters in settings.py.
@@ -22,7 +23,7 @@ def train_ddpm(args):
     """
     run_name = args.run_name
     device = args.device
-    model = Unet1d().to(device)
+    model = args.model.to(device)
     if args.ckpt:
         model.load_state_dict(torch.load(f'ckpts/{args.run_name}/{run_name}_epoch{args.ckpt_epoch}.pt'))
     train_loss_list = list()

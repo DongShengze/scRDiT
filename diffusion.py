@@ -1,6 +1,6 @@
 import torch
 from tqdm import tqdm
-from modeling import Unet1d
+from unet import Unet1d
 import logging
 
 logging.basicConfig(format="%(asctime)s - %(levelname)s: %(message)s", level=logging.INFO, datefmt="%I:%M:%S")

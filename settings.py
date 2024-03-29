@@ -1,5 +1,7 @@
 import argparse
 import torch
+from transformer import DiT
+from unet import Unet1d
 # Reset training parameters in this file.
 
 parser = argparse.ArgumentParser()
@@ -12,6 +14,10 @@ args.dataset_path = 'datasets/malignant_datas.npy'
 # training settings
 # args.run_name = 'fibroblast'  # This will determine the savepath of checkpoints!
 args.run_name = 'malignant'
+
+# setting up model
+args.model = Unet1d()
+# args.model = DiT(depth=3)
 
 args.epochs = 1600  # epochs of training
 args.batch_size = 16  # depends on your GPU memory size

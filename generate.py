@@ -1,8 +1,9 @@
-from modeling import Unet1d
+from unet import Unet1d
 from diffusion import DiffusionGene
 from settings import args
 import numpy as np
 import torch
+from transformer import DiT
 
 
 # Run this file to generate RNA-seq samples.
@@ -76,8 +77,10 @@ if __name__ == '__main__':
     method = 'ddim'  # use 'ddpm' or 'ddim'
     save = 'results/fibroblast_samples'  # result savepath
     acc_rate = 10
+    model_structure = Unet1d()
+    # model_structure = DiT(depth=3)
 
-    model = Unet1d().to(args.device)
+    model = model_structure.to(args.device)
     model.load_state_dict(torch.load(model_path))
     sub_seq = get_sub_time_seq(acc_rate)
 

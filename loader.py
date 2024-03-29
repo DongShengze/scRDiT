@@ -5,6 +5,7 @@ from settings import args
 
 datapath = args.dataset_path
 data = np.load(datapath, allow_pickle=True).astype(np.float32)
+data[data == 0.] = -10.
 
 
 class CellDataset(Dataset):
